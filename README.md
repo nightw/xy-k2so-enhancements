@@ -37,3 +37,5 @@ Most changes done by this mod can be toggled in the mod settings on startup, tho
 ### Moshine
 - Extends the distance from Vulcanus and Nauvis to Moshine to 10000 km and 25000 km respectively.
 - Add a connection from Moshine to Maraxsis which is 15000 km long
+***
+Credits to Krastorio 2 as research data and tech card sprites were edited to create the assets in this mod.
