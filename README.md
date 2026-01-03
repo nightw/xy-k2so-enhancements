@@ -1,4 +1,4 @@
-han# xyrc's Krastorio 2 Spaced Out Enhancements
+# xyrc's Krastorio 2 Spaced Out Enhancements
 Laundry list of tweaks, fixes, and overall enhancements to [Krastorio 2 Spaced Out](https://mods.factorio.com/mod/Krastorio2-spaced-out), focused on compatability with other mods, consistency changes, and balancing.
 Recommended usage with [Null's tweaks](https://mods.factorio.com/mod/nulls-k2so-tweaks), which adds a similar suite of changes
 
