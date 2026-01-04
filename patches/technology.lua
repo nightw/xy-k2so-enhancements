@@ -20,6 +20,7 @@ if settings.startup['xy-advanced-tank-expensive-research'].value then
     table.insert(t['kr-advanced-tank'].unit.ingredients, {'agricultural-science-pack', 1})
 end
 
+-- recode this entire setting eventually (this will never happen)
 if settings.startup['xy-tech-inflation'].value then
     -- increase the cost of all mid-late-endgame techs, starting after the first three vanilla planets
     -- does not affect Moshine as that is unrelated
@@ -53,7 +54,6 @@ if settings.startup['xy-tech-inflation'].value then
             for _,card in tech.unit.ingredients do
                 table.insert(used_cards, card[1]) -- 1-indexed lists
             end
-            -- theres probably a better/scalable way to do this but this is simple
             if used_cards['promethium-science-pack'] then
                 tech.unit.count = tech.unit.count * multi_prometh
             elseif used_cards['golden-science-pack'] then

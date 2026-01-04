@@ -7,6 +7,10 @@ data.raw['electric-turret']['tesla-turret'].attack_parameters.cooldown = 100 -- 
 data.raw['electric-turret']['tesla-turret'].energy_source.drain = '500kW' -- from 1 mw
 data.raw['electric-turret']['tesla-turret'].energy_source.input_flow_limit = '7.7MW' -- from 7 mw
 
+data.raw['gun']['teslagun'].attack_parameters.range = 32
+data.raw['gun']['teslagun'].attack_parameters.cooldown = 45
+data.raw['ammo']['tesla-ammo'] = 20 -- not exactly expensive but makes personal-use tesla gun less of a hassle, and it shoots faster now also
+
 if settings.startup['xy-adv-chem-plant-rebalance'].value and mods['Paracelsin'] then
     local acp = data.raw['assembling-machine']['kr-advanced-chemical-plant']
     local ep = data.raw['assembling-machine']['electrochemical-plant']

@@ -2,13 +2,12 @@ if mods['planet-muluna'] and mods['Moshine'] then
     -- Rework "Solar panel from silicon cell" recipe to be more effective instead of just being the same thing but with aluminum
     -- 5 silicon replaced with 1 silicon cell, steel plate replaced with aluminum electronic circuit requirement removed,
     -- Crafting time and most inputs 3x, but output 4x
-    -- Requires 40 aluminum plates instead of expected 15
     data.raw['recipe']['muluna-silicon-solar-panel'].enabled = true
     data.raw['recipe']['muluna-silicon-solar-panel'].energy_required = 30
     data.raw['recipe']['muluna-silicon-solar-panel'].ingredients = {
         {type = 'item', name = 'silicon-cell', amount = 4},
         {type = 'item', name = 'kr-iron-beam', amount = 12},
-        {type = 'item', name = 'aluminum-plate', amount = 40},
+        {type = 'item', name = 'aluminum-plate', amount = 15},
         {type = 'item', name = 'glass', amount = 30},
     }
     data.raw['recipe']['muluna-silicon-solar-panel'].results = {
@@ -98,7 +97,7 @@ if settings.startup['xy-lab-recipe-changes'].value then
         table.insert(sing_lab_recipe.ingredients, {type = 'item', name = 'quantum-processor', amount = 50})
     end
 
-    if mods['Paracelsin'] then
+    if mods['Paracelsin'] and mods['planet-muluna'] then
         data.raw.recipe['cryolab'].ingredients = {
             {type = 'item', name = 'aluminum-plate', amount = 200},
             {type = 'item', name = 'quantum-processor', amount = 25},
