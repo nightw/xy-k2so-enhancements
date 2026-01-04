@@ -107,4 +107,12 @@ data:extend({
         localised_name = {'mod-setting-name.xy-advanced-tank-expensive-research'},
         localised_description = {'mod-setting-description.xy-advanced-tank-expensive-research'},
     },
+    {
+        type = 'bool-setting',
+        name = 'xy-spidertron-fish',
+        setting_type = 'startup',
+        default_value = false,
+
+        localised_name = {'mod-setting-name.xy-spidertron-fish'},
+    },
 })

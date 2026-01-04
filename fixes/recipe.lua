@@ -109,3 +109,6 @@ if settings.startup['xy-lab-recipe-changes'].value then
         }
     end
 end
+if settings.startup['xy-spidertron-fish'].value then
+    table.insert(data.raw.recipe['spidertron'].ingredients, {type = 'item', name = 'raw-fish', amount = 1})
+end
