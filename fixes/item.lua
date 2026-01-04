@@ -40,20 +40,52 @@ if mods['Paracelsin'] then
         }
     })
 end
-if mods['secretas'] then
-
-end
+--[[if mods['secretas'] then
+    data.extend({ 
+        {
+            type = 'item',
+            name = 'xy-golden-research-data',
+            icon = '__xy-k2so-enhancements__/icons/golden-research-data.png',
+            subgroup = 'science-pack',
+            order = 'ao08[gold',
+            stack_size = 200,
+            weight = 1 * kg,
+            default_import_location = 'frozeta',
+            
+            localised_name = {'item-name.xy-golden-research-data'},
+        },
+        {
+            type = 'recipe',
+            name = 'xy-golden-research-data',
+            enabled = false,
+            energy_required = 20,
+            ingredients = { -- probably make this recipe less stupid eventually
+                {type = 'item', name = 'solid-fuel', amount = 7},
+                {type = 'item', name = 'gold-plate', amount = 14},
+                {type = 'item', name = 'arithmetic-combinator', amount = 14},
+                {type = 'item', name = 'steam-turbine', amount = 2},
+                {type = 'fluid', name = 'steam', amount = 250},
+            },
+            results = {
+                {type = 'item', name = 'xy-golden-research-data', amount = 8},
+            },
+            category = 'metallurgy-or-assembling',
+            allow_productivity = true,
+            surface_conditions = {
+                {
+                    property = 'pressure', min = 200, max = 280
+                }
+            },
+            
+            always_show_products = true,
+            show_amount_in_title = false,
+            localised_name = {'item-name.xy-golden-research-data'}
+        }
+    })
+end]]
 
 if settings.startup['xy-paracelsin-tech-card'].value and mods['Paracelsin'] then
     local gsp_recipe = data.raw['recipe']['galvanization-science-pack']
-    --[[local research_data_recipe = table.deepcopy(data.raw['recipe']['galvanization-science-pack'])
-
-    research_data_recipe.name = 'xy-galvanization-research-data'
-    research_data_recipe.enabled = true
-    research_data_recipe.results = {
-        {type = 'item', name = 'xy-galvanization-research-data', amount = 1},
-    }
-    research_data_recipe.localised_name = {'item-name.xy-galvanization-research-data'}]]
 
     gsp_recipe.energy_required = 20
     gsp_recipe.category = 'kr-tech-cards'
