@@ -1,4 +1,25 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 01-04-2026
+  Bugfixes:
+    - Fixed Muluna not being installed causing crash on load
+    - Fixed Science tab not being installed causing crash on load
+  Balancing:
+    - The "solar panel from silicon cell" recipe requires less aluminum plates to make it more appealing on Moshine
+    - Buff Space Age's tesla weapons in order to fit the power creep of K2
+    - Turret range 30 > 40, attack speed 2.0s > 1.67s, constant power draw 1.0MW > 500kW
+    - Gun range 24 > 32, attack speed 1.0s > 0.75s, shots/mag 10 > 20
+    - *(Default off) K2's Advanced Tank locked behind science from Vulcanus, Gleba, & Fulgora to encourage usage of combat spidertrons
+  Major Features:
+    - *(Default off) Beginning after the first four vanilla planets, technology costs begin to increase significantly, highly recommended to be enabled!
+      - This is to support usage of K2, Space Age, and other mods lategame tools and to balance out powerful lab upgrades
+      - The scaling values can be reduced in mod settings, down to 50%
+  Features:
+    - (Maraxsis) Hydro plant can run fuel refinery recipes
+    - *(Default off) Spidertron recipe requires raw fish again
+  Gui:
+    - Ordered settings, added color coded recommendations, made easier to read
+---------------------------------------------------------------------------------------------------
 Version: 0.1.0
 Date: 01-03-2026
   Features:

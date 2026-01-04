@@ -5,6 +5,7 @@ Recommended usage with [Null's tweaks](https://mods.factorio.com/mod/nulls-k2so-
 Most of this mod is currently untested. Feedback and suggestions are welcomed.
 
 Most changes done by this mod can be toggled in the mod settings on startup, though the majority of them are intended to be left enabled and are done so by default.
+The mods settings are detailed more in game, including effects on existing saves and recommendations.
 ***
 # Changes
 ## Built-in
@@ -12,9 +13,10 @@ Most changes done by this mod can be toggled in the mod settings on startup, tho
 - Vehicles and trains from external mods are now properly supported by K2's equipment system
   - Supported: Muluna's rocket buggy, SE Space Trains, Maraxsis' submarines
   - Stats such as weight and weapon range are also fixed and consume the proper fuels
-- Solar panel from silicon cell recipe is now an bulk recipe
-  - Uses more ingredients to output 4 solar panels at once, consuming more aluminum to do so
+- Solar panel from silicon cell recipe is now an bulk recipe, uses more ingredients to output 4 solar panels at once
+- Range and firerate of tesla turret and tesla gun buffed; tesla turret draws half the power passively
 ## Toggleable
+All settings in this category can be enabled or disabled in the mod settings!
 ### General
 - Decrease the weight of many intermediates, making them easier to ship via rocket
   - This is primarily targetted and ingredients such as inserter parts or automation cores, to promote in-situ assembly of buildings
@@ -22,6 +24,9 @@ Most changes done by this mod can be toggled in the mod settings on startup, tho
   - Bio processing unit recipe ratios fixed and is made in biochamber instead of EM plant
   - Cerys' processing unit from nitric acid ratios changed and is locked to Cerys
   - Paracelsin's processing unit from nitric acid changed; notably requires one less advanced circuit
+- (Default off) Starting after the first four vanilla planets, all non-upgrade techs begin to use signifcantly more tech cards to complete, increasing later in the game. This is supposed to make the player use the tools K2, Space Age, and other mods add in order to build a "kilobase". The multiplier can be further adjusted in mod settings. **It is highly recommended to enable this setting**
+- (Default off) Spidertron recipe requires raw fish again
+- (Default off) K2's Advanced Tank locked behind science from Vulcanus, Gleba, & Fulgora to encourage usage of combat spidertrons
 ### Paracelsin
 - Adds "new" galvanization tech card, replacing the galvanization science pack as seen in the thumbnail
   - Similar to other Space Age tech cards, galvanization tech cards must be produced on Paracelsin (through the same recipe as previously) before being combined with blank tech cards anywhere to produce the end product
@@ -33,9 +38,9 @@ Most changes done by this mod can be toggled in the mod settings on startup, tho
   - Adv. chemical plants require two chemical plants to craft, and the electrochemical plant requires one adv. chemical plant
 ### Moshine
 - Extends the distance from Vulcanus and Nauvis to Moshine to 10000 km and 25000 km respectively.
-- Add a connection from Moshine to Maraxsis which is 15000 km long
 ### Maraxsis
 - Hydro plant can run fuel refinery recipes; this may put the cryo plant out of a job
+- (Default off) Add a connection from Moshine to Maraxsis which is 15000 km long
 ### Lab changes
 - Move all lab buildings to the science category if the [Science group](https://mods.factorio.com/mod/science-tab) mod is installed without needing to meet the ten lab requirement
 - The singularity lab requires Muluna's cryolab instead of biolabs in its recipe. If Muluna isn't installed, quantum processors will be added to its recipe instead in order to require more Space Age materials (outside of Gleba)
