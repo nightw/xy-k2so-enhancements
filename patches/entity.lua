@@ -9,7 +9,7 @@ data.raw['electric-turret']['tesla-turret'].energy_source.input_flow_limit = '7.
 
 data.raw['gun']['teslagun'].attack_parameters.range = 32
 data.raw['gun']['teslagun'].attack_parameters.cooldown = 45
-data.raw['ammo']['tesla-ammo'] = 20 -- not exactly expensive but makes personal-use tesla gun less of a hassle, and it shoots faster now also
+data.raw['ammo']['tesla-ammo'].magazine_size = 20 -- not exactly expensive but makes personal-use tesla gun less of a hassle, and it shoots faster now also
 
 if settings.startup['xy-adv-chem-plant-rebalance'].value and mods['Paracelsin'] then
     local acp = data.raw['assembling-machine']['kr-advanced-chemical-plant']
@@ -50,4 +50,5 @@ end
 
 if settings.startup['xy-hydro-plant-runs-fuel-ref-recipes'].value and mods['maraxsis'] then
     table.insert(data.raw['assembling-machine']['maraxsis-hydro-plant'].crafting_categories, 'kr-fuel-refinery')
+
 end
