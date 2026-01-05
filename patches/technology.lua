@@ -121,7 +121,7 @@ if settings.startup['xy-tech-inflation'].value then
     }
     local general_multi = { -- only applies the highest value, will make this a setting eventually but might be clutter? could organize into sections
         ['promethium-science-pack'] = 25,
-        ['golden-science-pack'] = 20,
+        ['golden-science-pack'] = 15,
         ['kr-singularity-tech-card'] = 15,
         ['kr-matter-tech-card'] = 10,
         ['cryogenic-science-pack'] = 6,
