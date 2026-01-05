@@ -1,13 +1,44 @@
 local t = data.raw.technology
-
 local function add_preqs(tech, preqs)
-    for _,v in pairs(preqs) do
-        table.insert(t[tech].prerequisites, v)
+    if t[tech] then
+        for _,v in pairs(preqs) do
+            table.insert(t[tech].prerequisites, v)
+        end
+    else
+        log(tech..' - Tech does not exist!')
+    end
+end
+local function remove_preqs(tech, preqs_to_remove) -- Should be used before add_preqs() if both are needed
+    if t[tech] then
+        for _,to_remove in pairs(preqs_to_remove) do
+            for i,existing_preq in pairs(t[tech].prerequisites) do
+                if existing_preq == to_remove then
+                    table.remove(t[tech].prerequisites, i)
+                end
+            end
+        end
+    else
+        log(tech..' - Tech does not exist!')
     end
 end
 
-if settings.startup['xy-paracelsin-tech-card'].value then
-    if settings.startup['xy-paracelsin-tech-card-endgame'].value and mods['Paracelsin'] then
+local function remove_cards(tech, cards_to_remove) -- Should be used before add_preqs() if both are needed
+    if t[tech] then
+        for _,to_remove in pairs(cards_to_remove) do
+            for i,existing_card in pairs(t[tech].unit.ingredients) do
+                if existing_card[1] == to_remove then
+                    table.remove(t[tech].unit.ingredients, i)
+                end
+            end
+        end
+    else
+        log(tech..' - Tech does not exist!')
+    end
+end
+
+--- Tech card replacements
+if settings.startup['xy-paracelsin-tech-card'].value and mods['Paracelsin'] then
+    if settings.startup['xy-paracelsin-tech-card-endgame'].value then
         table.insert(t['kr-singularity-lab'].unit.ingredients, {'galvanization-science-pack', 1})
         table.insert(t['kr-antimatter-ammo'].unit.ingredients, {'galvanization-science-pack', 1})
         table.insert(t['kr-antimatter-reactor'].unit.ingredients, {'galvanization-science-pack', 1})
@@ -20,6 +51,49 @@ if settings.startup['xy-paracelsin-tech-card'].value then
     end
 end
 
+if settings.startup['xy-secretas-tech-card'].value and mods['secretas'] then
+    -- Logical progression
+    remove_preqs('golden-science-pack', {'planet-discovery-secretas'})
+    add_preqs('golden-science-pack', {'steam-recycler'})
+    -- Lock these behind auric tech card because you need those to unlock these.
+    -- They are otherwise normally unlocked through the secretas research
+    local requires_auric = {
+        'worker-robots-storage-4',
+        'gold-heat-pipe',
+        'gold-plate-productivity',
+        'gold-railgun-turret',
+        'hyper-inserter',
+        'pentapod-egg-unrestricted',
+        'spaceship-scrap-recycling-productivity',
+        'transport-belt-capacity-3-Secretas',
+    }
+    if(settings.startup["condense-level-4-modules-into-one-technology"].value) then
+        table.insert(requires_auric, 'module-finale')
+    else
+        table.insert(requires_auric, 'efficiency-module-4-S')
+        table.insert(requires_auric, 'productivity-module-4-S')
+        table.insert(requires_auric, 'quality-module-4-S')
+        table.insert(requires_auric, 'speed-module-4-S')
+    end
+    for _,tech in pairs(requires_auric) do
+        remove_preqs(tech, {'planet-discovery-secretas'})
+        add_preqs(tech, {'golden-science-pack'})
+    end
+    --- Other secretas patches
+    t['science-pack-productivity'].hidden = true -- Remove this; bloat
+    remove_cards('gold-heat-pipe', {'automation-science-pack', 'logistic-science-pack', 'chemical-science-pack'}) -- redundant cards at this point
+    remove_preqs('planet-discovery-secretas', {'cryogenic-science-pack'})
+    add_preqs('planet-discovery-secretas', {'railgun'})
+    add_preqs('efficiency-module-4-S',   {'efficiency-module-3'})
+    add_preqs('productivity-module-4-S', {'productivity-module-3'})
+    add_preqs('quality-module-4-S',      {'quality-module-3'})
+    add_preqs('speed-module-4-S',        {'speed-module-3'})
+
+    if settings.startup['xy-paracelsin-tech-card'].value and mods['Paracelsin'] then
+        table.insert(t['planet-discovery-secretas'].unit.ingredients, {'galvanization-science-pack', 1})
+    end
+end
+---
 if settings.startup['xy-advanced-tank-expensive-research'].value then
     t['kr-advanced-tank'].unit.count = 2500
     table.insert(t['kr-advanced-tank'].unit.ingredients, {'metallurgic-science-pack', 1})
@@ -27,7 +101,7 @@ if settings.startup['xy-advanced-tank-expensive-research'].value then
     table.insert(t['kr-advanced-tank'].unit.ingredients, {'electromagnetic-science-pack', 1})
     add_preqs('kr-advanced-tank', {'metallurgic-science-pack','agricultural-science-pack','electromagnetic-science-pack'})
 end
-
+---
 if settings.startup['xy-tech-inflation'].value then
     -- increase the cost of all mid-late-endgame techs, starting after the first three vanilla planets
     -- does not affect Moshine as that is unrelated
