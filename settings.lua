@@ -42,6 +42,17 @@ data:extend({
     },
     {
         type = 'bool-setting',
+        name = 'xy-secretas-polish',
+        setting_type = 'startup',
+        default_value = true,
+
+        order = 'secre-a',
+
+        localised_name = {'mod-setting-name.xy-secretas-polish'},
+        localised_description = {'mod-setting-description.xy-secretas-polish'},
+    },
+    {
+        type = 'bool-setting',
         name = 'xy-lab-recipe-changes',
         setting_type = 'startup',
         default_value = true,

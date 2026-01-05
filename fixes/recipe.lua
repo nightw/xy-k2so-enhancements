@@ -15,40 +15,7 @@ if mods['planet-muluna'] and mods['Moshine'] then
     }
 end
 
--- Processing unit alt recipes
---[[data:extend{{ -- For usage on Vulcanus
-    type = 'recipe',
-    name = 'xy-copper-processing-unit',
-    enabled = false,
-    energy_required = 12,
-    category = 'electronics-or-assembling',
-    allow_productivity = true,
-    ingredients = {
-        {type = 'item', name = 'copper-cable', amount = 144}, -- at base 50% prod, two foundry can feed one EM plant
-        {type = 'item', name = 'advanced-circuit', amount = 6},
-        {type = 'fluid', name = 'sulfuric-acid', amount = 10},
-    },
-    results = {
-        {type = 'item', name = 'processing-unit', amount = 2},
-    },
-    surface_conditions = {
-        {property = 'pressure',
-        min = 2000,
-        max = 4000,}
-    },
-
-    order = 'b[circuits]-c',
-    icons = {
-        {icon = '__base__/graphics/icons/processing-unit.png'},
-        {icon = '__base__/graphics/icons/copper-cable.png', scale = 0.26, shift = {-8, -8}},
-    },
-}}]]
-
 if settings.startup['xy-processing-unit-alt'].value then
-    --[[table.insert(data.raw['technology']['foundry'].effects, {
-        type = 'unlock-recipe',
-        recipe = 'xy-copper-processing-unit',
-    })]]
     if mods['Cerys-Moon-of-Fulgora'] then
         data.raw['recipe']['cerys-processing-units-from-nitric-acid'].energy_required = 12
         data.raw['recipe']['cerys-processing-units-from-nitric-acid'].surface_conditions = {
@@ -83,6 +50,7 @@ if settings.startup['xy-processing-unit-alt'].value then
     }
     data.raw['recipe']['kr-bio-processing-circuit'].category = 'organic-or-assembling' -- changed from EM plant
 end
+
 if settings.startup['xy-lab-recipe-changes'].value then
     data.raw['item']['biolab'].weight = 200 * kg
     local sing_lab_recipe = data.raw.recipe['kr-singularity-lab']
@@ -108,6 +76,57 @@ if settings.startup['xy-lab-recipe-changes'].value then
         }
     end
 end
+
 if settings.startup['xy-spidertron-fish'].value then
     table.insert(data.raw.recipe['spidertron'].ingredients, {type = 'item', name = 'raw-fish', amount = 1})
+end
+
+if settings.startup['xy-secretas-polish'].value and mods['secretas'] then
+    data.raw.recipe['speed-module-4-S'].ingredients = {
+        {type = 'item', name = 'gold-plate', amount = 5},
+        {type = 'item', name = 'quantum-processor', amount = 5},
+        {type = 'item', name = 'kr-ai-core', amount = 5},
+        {type = 'item', name = 'tungsten-plate', amount = 5},
+        {type = 'item', name = 'speed-module-3', amount = 4},
+    }
+    data.raw.recipe['efficiency-module-4-S'].ingredients = {
+        {type = 'item', name = 'gold-plate', amount = 5},
+        {type = 'item', name = 'quantum-processor', amount = 5},
+        {type = 'item', name = 'kr-ai-core', amount = 5},
+        {type = 'item', name = 'bioflux', amount = 5},
+        {type = 'item', name = 'efficiency-module-3', amount = 4},
+    }
+    data.raw.recipe['productivity-module-4-S'].ingredients = {
+        {type = 'item', name = 'gold-plate', amount = 5},
+        {type = 'item', name = 'quantum-processor', amount = 5},
+        {type = 'item', name = 'kr-ai-core', amount = 5},
+        {type = 'item', name = 'bioflux', amount = 5},
+        {type = 'item', name = 'productivity-module-3', amount = 4},
+    }
+    data.raw.recipe['quality-module-4-S'].ingredients = {
+        {type = 'item', name = 'gold-plate', amount = 5},
+        {type = 'item', name = 'quantum-processor', amount = 5},
+        {type = 'item', name = 'kr-ai-core', amount = 5},
+        {type = 'item', name = 'supercapacitor', amount = 5},
+        {type = 'item', name = 'quality-module-3', amount = 4},
+    }
+    data.raw.recipe['gold-railgun-turret'].ingredients = { -- WTF is this base recipe??
+        {type = 'item', name = 'gold-plate', amount = 200},
+        {type = 'item', name = 'kr-ai-core', amount = 50},
+        {type = 'item', name = 'kr-imersium-beam', amount = 40},
+        {type = 'item', name = 'supercapacitor', amount = 50},
+        {type = 'item', name = 'railgun-turret', amount = 1},
+    }
+    data.raw['ammo-turret']['gold-railgun-turret'].subgroup = 'kr-railgun-turret'
+    data.raw['ammo-turret']['gold-railgun-turret'].order = 'a02[gold-railgun-turret]'
+    
+    local ingr1 = 'quantum-processor'
+    if mods['Paracelsin'] then ingr1 = 'electric-coil' end
+    data.raw.recipe['hyper-inserter'].ingredients = { -- WTF is this base recipe part 2
+        {type = 'item', name = 'gold-plate', amount = 10},
+        {type = 'item', name = 'kr-ai-core', amount = 1},
+        {type = 'item', name = ingr1, amount = 5},
+        {type = 'item', name = 'supercapacitor', amount = 1},
+        {type = 'item', name = 'kr-superior-inserter', amount = 1},
+    }
 end
