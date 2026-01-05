@@ -108,7 +108,6 @@ if settings.startup['xy-tech-inflation'].value then
     -- increase the cost of all mid-late-endgame techs, starting after the first three vanilla planets
     -- does not affect Moshine as that is unrelated
 
-    local settings_post_multi = 1 -- worst var name ever
     local hardcoded_multi = { -- overrides the sweeping changes
         ['planet-discovery-aquilo'] = 8,
         ['planet-discovery-maraxsis'] = 8,
@@ -132,11 +131,13 @@ if settings.startup['xy-tech-inflation'].value then
         ['kr-advanced-tech-card'] = 2,
         ['MAE-cards'] = 5,
     }
+    local settings_post_multi = 1
     if settings.startup['xy-tech-inflation-scale'].value ~= '100%' then -- dumb but it works so whatever
-        if settings.startup['xy-tech-inflation-scale'].value == '50%' then
-            settings_post_multi = .5
-        elseif settings.startup['xy-tech-inflation-scale'].value == '75%' then
-            settings_post_multi = .75
+        if     settings.startup['xy-tech-inflation-scale'].value == '25%'  then settings_post_multi = 0.25
+        elseif settings.startup['xy-tech-inflation-scale'].value == '50%'  then settings_post_multi = 0.5
+        elseif settings.startup['xy-tech-inflation-scale'].value == '75%'  then settings_post_multi = 0.75
+        elseif settings.startup['xy-tech-inflation-scale'].value == '150%' then settings_post_multi = 1.5
+        elseif settings.startup['xy-tech-inflation-scale'].value == '200%' then settings_post_multi = 2
         end
     end
 
@@ -166,8 +167,9 @@ if settings.startup['xy-tech-inflation'].value then
             if highest_multi == 1 and MAE == 3 then
                 highest_multi = general_multi['MAE-cards']
             end
-            if highest_multi ~= 1 then
-                tech.unit.count = math.ceil(tech.unit.count * highest_multi * settings_post_multi)
+            local final_multi = highest_multi * settings_post_multi
+            if highest_multi ~= 1 and final_multi > 1 then
+                tech.unit.count = math.ceil(tech.unit.count * final_multi)
             end
         end
 
