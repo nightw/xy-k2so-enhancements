@@ -91,7 +91,7 @@ if settings.startup['xy-secretas-tech-card'].value and mods['secretas'] then
         add_preqs('speed-module-4-S',        {'speed-module-3'})
     end
     
-    if settings.startup['xy-paracelsin-tech-card'].value and mods['Paracelsin'] then
+    if settings.startup['xy-paracelsin-tech-card'].value and mods['Paracelsin'] and not mods['outer-rim'] then
         table.insert(t['planet-discovery-secretas'].unit.ingredients, {'galvanization-science-pack', 1})
     end
 end
@@ -173,4 +173,5 @@ if settings.startup['xy-tech-inflation'].value then
 
         ::continue::
     end
+
 end
