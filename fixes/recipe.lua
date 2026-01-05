@@ -117,6 +117,13 @@ if settings.startup['xy-secretas-polish'].value and mods['secretas'] then
         {type = 'item', name = 'supercapacitor', amount = 50},
         {type = 'item', name = 'railgun-turret', amount = 1},
     }
+    local ingr0 = 'steel-plate'
+    if mods['Paracelsin'] then ingr0 = 'zinc-solder' end
+    data.raw.recipe['gold-heat-pipe'].ingredients = {
+        {type = 'item', name = 'heat-pipe', amount = 1},
+        {type = 'item', name = 'gold-plate', amount = 10},
+        {type = 'item', name = ingr0, amount = 2},
+    }
     data.raw['ammo-turret']['gold-railgun-turret'].subgroup = 'kr-railgun-turret'
     data.raw['ammo-turret']['gold-railgun-turret'].order = 'a02[gold-railgun-turret]'
     
