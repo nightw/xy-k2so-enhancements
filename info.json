@@ -16,7 +16,8 @@
     "? Paracelsin",
     "? secretas",
     "? se-space-trains",
-    "? science-tab"
+    "? science-tab",
+    "? outer-rim"
   ],
   "space_travel_required": true,
   "description": "Laundry list of tweaks, fixes, and overall enhancements to Krastorio 2 Spaced Out for compatability with other mods, consistency changes, and balancing. Adds sprited galvanization tech cards to Paracelsin. Patches vehicles added by other mods to work with K2's equipment system. Patches can be toggled in settings."
