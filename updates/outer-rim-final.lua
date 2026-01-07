@@ -12,12 +12,12 @@ data.raw.tool['outer-rim-insulation-science-pack'].icon = '__xy-k2so-enhancement
 data.raw.technology['cryogenic-science-pack'].icon = '__k2so-assets__/technologies/cryogenic-tech-card.png'
 data.raw.technology['galvanization-science-pack'].icon = '__xy-k2so-enhancements__/icons/galvanization-tech-card-research.png'
 data.raw.technology['golden-science-pack'].icon = '__xy-k2so-enhancements__/icons/golden-tech-card-research.png'
-data.raw.technology['outer-rim-insulation-science-pack'].icon = '__xy-k2so-enhancements__/icons/outer-rim-insulation-research.png'
+data.raw.technology['outer-rim-insulation-science-pack'].icon = '__xy-k2so-enhancements__/icons/insulation-tech-card-research.png'
 
 
 
 -- Recipe icons
-data.raw.recipe['outer-rim-insulation-science-pack'].icon = '__xy-k2so-enhancements__/icons/outer-rim-insulation.png'
+data.raw.recipe['outer-rim-insulation-science-pack'].icon = '__xy-k2so-enhancements__/icons/outer-rim-insulation-tech-card.png'
 
 
 
