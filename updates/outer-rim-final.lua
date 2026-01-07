@@ -6,7 +6,7 @@ data.raw.tool['golden-science-pack'].icon = '__xy-k2so-enhancements__/icons/gold
 -- New textures
 data.raw.tool['outer-rim-insulation-science-pack'].icon = '__xy-k2so-enhancements__/icons/insulation-tech-card.png'
 data.raw.tool['outer-rim-thermodynamic-science-pack'].icon = '__xy-k2so-enhancements__/icons/thermodynamic-tech-card.png'
-data.raw.tool['outer-rim-cryochemical--science-pack'].icon = '__xy-k2so-enhancements__/icons/cryochemical-tech-card.png'
+data.raw.tool['outer-rim-cryochemical-science-pack'].icon = '__xy-k2so-enhancements__/icons/cryochemical-tech-card.png'
 data.raw.tool['outer-rim-spacecraft-science-pack'].icon = '__xy-k2so-enhancements__/icons/spacecraft-tech-card.png'
 -- Research icons
 data.raw.technology['cryogenic-science-pack'].icon = '__k2so-assets__/technologies/cryogenic-tech-card.png'
