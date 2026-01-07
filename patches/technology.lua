@@ -112,14 +112,6 @@ if settings.startup['xy-advanced-tank-expensive-research'].value then
     table.insert(t['kr-advanced-tank'].unit.ingredients, {'electromagnetic-science-pack', 1})
     add_preqs('kr-advanced-tank', {'metallurgic-science-pack','agricultural-science-pack','electromagnetic-science-pack'})
 end
----
-if settings.startup['xy-advanced-tank-expensive-research'].value then
-    t['kr-advanced-tank'].unit.count = 2500
-    table.insert(t['kr-advanced-tank'].unit.ingredients, {'metallurgic-science-pack', 1})
-    table.insert(t['kr-advanced-tank'].unit.ingredients, {'agricultural-science-pack', 1})
-    table.insert(t['kr-advanced-tank'].unit.ingredients, {'electromagnetic-science-pack', 1})
-    add_preqs('kr-advanced-tank', {'metallurgic-science-pack','agricultural-science-pack','electromagnetic-science-pack'})
-end
 ----- MLE Tech Scaling -----
 if settings.startup['xy-tech-inflation'].value then
     -- increase the cost of all mid-late-endgame techs, starting after the first three vanilla planets
