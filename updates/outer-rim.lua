@@ -61,6 +61,7 @@ for _,pack in pairs(to_convert) do
     local research_data_recipe = table.deepcopy(r)
     r.energy_required = 20
     r.category = 'kr-tech-cards'
+    r.additional_categories = nil
     r.surface_conditions = nil
     r.ingredients = {
         {type = 'item', name = 'kr-blank-tech-card', amount = 5},
