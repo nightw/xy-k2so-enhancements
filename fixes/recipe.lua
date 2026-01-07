@@ -1,3 +1,15 @@
+local function add_additional_categories(recipes, category) -- Passing nil recipes or recipes with nil or existing additiona_categories is safe
+    for _,r in pairs(recipes) do
+        if data.raw['recipe'][r] then
+            if data.raw['recipe'][r].additional_categories then
+                table.insert(data.raw['recipe'][r].additional_categories, category)
+            else
+                data.raw['recipe'][r].additional_categories = {category}
+            end
+        end
+    end
+end
+
 if mods['planet-muluna'] and mods['Moshine'] then
     -- Rework "Solar panel from silicon cell" recipe to be more effective instead of just being the same thing but with aluminum
     -- 5 silicon replaced with 1 silicon cell, steel plate replaced with aluminum electronic circuit requirement removed,
@@ -101,6 +113,7 @@ if settings.startup['xy-mechanical-plant-more-recipes'].value then
         'rail-minmal',
         'rail-ramp-minimal',
         -- actually helpful
+        'offshore-pump',
         'kr-inserter-parts',
         'centrifuge',
         'electric-mining-drill',
@@ -115,15 +128,7 @@ if settings.startup['xy-mechanical-plant-more-recipes'].value then
         'asteroid-collector',
         'thruster',
     }
-    for _,r in pairs(recipes) do
-        if data.raw['recipe'][r] then
-            if data.raw['recipe'][r].additional_categories then
-                table.insert(data.raw['recipe'][r].additional_categories, 'mechanics')
-            else
-                data.raw['recipe'][r].additional_categories = {'mechanics'}
-            end
-        end
-    end
+    add_additional_categories(recipes, 'mechanics')
 end
 
 if settings.startup['xy-secretas-polish'].value and mods['secretas'] then
