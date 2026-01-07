@@ -3,6 +3,8 @@ Version: 0.2.6
 Date: 01-06-2026
   Minor Features:
     - (Paracelsin) Offshore pump added to mechanical plant as a consistency change
+  Changes:
+    - Moshine removed as required dependency
   Bugfixes:
     - No longer crashes on load with Outer Rim installed
       - Proper compat not added yet, but unlikely to break anything
