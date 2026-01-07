@@ -55,10 +55,6 @@ if settings.startup['xy-adv-chem-plant-rebalance'].value and mods['Paracelsin'] 
 end
 
 if settings.startup['xy-secretas-tech-card'].value and mods['secretas'] then
-    -- Logical progression
-    if mods['outer-rim'] then goto outer_rim_skip end
-    remove_preqs('golden-science-pack', {'planet-discovery-secretas'})
-    add_preqs('golden-science-pack', {'steam-recycler'})
     -- Lock these behind auric tech card because you need those to unlock these.
     -- They are otherwise normally unlocked through the secretas research
     local requires_auric = {
@@ -71,6 +67,7 @@ if settings.startup['xy-secretas-tech-card'].value and mods['secretas'] then
         'spaceship-scrap-recycling-productivity',
         'transport-belt-capacity-3-Secretas',
     }
+    if mods['outer-rim'] then goto outer_rim_skip end
     if settings.startup['condense-level-4-modules-into-one-technology'].value then
         table.insert(requires_auric, 'module-finale')
     else
@@ -84,9 +81,15 @@ if settings.startup['xy-secretas-tech-card'].value and mods['secretas'] then
         add_preqs(tech, {'golden-science-pack'})
     end
 
+    remove_preqs('golden-science-pack', {'planet-discovery-secretas'})
+    add_preqs('golden-science-pack', {'steam-recycler'})
+
     ::outer_rim_skip::
     --- Other secretas patches
+    --- Logical progression
+    
     t['science-pack-productivity'].hidden = true -- Remove this; bloat
+
     remove_cards('gold-heat-pipe', {'automation-science-pack', 'logistic-science-pack', 'chemical-science-pack'}) -- redundant cards at this point
     remove_preqs('planet-discovery-secretas', {'cryogenic-science-pack'})
     add_preqs('planet-discovery-secretas', {'railgun'})
@@ -100,6 +103,14 @@ if settings.startup['xy-secretas-tech-card'].value and mods['secretas'] then
     if settings.startup['xy-paracelsin-tech-card'].value and mods['Paracelsin'] and not mods['outer-rim'] then
         table.insert(t['planet-discovery-secretas'].unit.ingredients, {'galvanization-science-pack', 1})
     end
+end
+---
+if settings.startup['xy-advanced-tank-expensive-research'].value then
+    t['kr-advanced-tank'].unit.count = 2500
+    table.insert(t['kr-advanced-tank'].unit.ingredients, {'metallurgic-science-pack', 1})
+    table.insert(t['kr-advanced-tank'].unit.ingredients, {'agricultural-science-pack', 1})
+    table.insert(t['kr-advanced-tank'].unit.ingredients, {'electromagnetic-science-pack', 1})
+    add_preqs('kr-advanced-tank', {'metallurgic-science-pack','agricultural-science-pack','electromagnetic-science-pack'})
 end
 ---
 if settings.startup['xy-advanced-tank-expensive-research'].value then
@@ -183,4 +194,5 @@ if settings.startup['xy-tech-inflation'].value then
     end
 
 end
+
 
