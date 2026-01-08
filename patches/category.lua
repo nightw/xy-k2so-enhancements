@@ -1,6 +1,6 @@
 local util = require('util.util')
 local function apply_item_subgroup(subgroup, item, prototype)
-    for _,item in items do
+    for _,item in pairs(items) do
         local v = data.raw[prototype]
         if v then 
             v.subgroup = subgroup
@@ -119,4 +119,10 @@ if mods['science-tab'] then
     util.order_from_index(order_tech_card_1, 'tool')
     util.order_from_index(order_tech_card_2, 'tool')
     util.order_from_index(order_tech_card_3, 'tool')
+
+    local order_tech_card_from_cooling = {}
+    for _,v in pairs(order_tech_card_1) do table.insert(order_tech_card_from_cooling, v..'-cooling') end
+    for _,v in pairs(order_tech_card_2) do table.insert(order_tech_card_from_cooling, v..'-cooling') end
+    for _,v in pairs(order_tech_card_3) do table.insert(order_tech_card_from_cooling, v..'-cooling') end
+    util.order_from_index(order_tech_card_from_cooling, 'recipe')
 end
