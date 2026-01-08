@@ -4,6 +4,8 @@ Date: 01-07-2026
   Features:
     - Outer Rim partially supported
       - All science packs replaced with sprited tech cards, including research data and recipes
+      - Low tier tech cards removed from Outer Rim techs
+      - Outer Rim tech cards supported by tech scaling setting
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.6
 Date: 01-06-2026
