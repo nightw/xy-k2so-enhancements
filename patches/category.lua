@@ -1,6 +1,6 @@
 local util = require('util.util')
-local function apply_item_subgroup(subgroup, item, prototype)
-    for _,item in pairs(items) do
+local function apply_item_subgroup(subgroup, items, prototype)
+    for _,v in pairs(items) do
         local v = data.raw[prototype]
         if v then 
             v.subgroup = subgroup
