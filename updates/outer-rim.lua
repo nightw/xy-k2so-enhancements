@@ -106,6 +106,11 @@ local strip_cards = {
     'vaterite-processing-productivity',
     'concrete-productivity',
     'long-dstance-transmission',-- why
+    'workers-robot-storage-4',
+    'workers-robot-storage-5',
+    'workers-robot-storage-6',
+    'workers-robot-storage-7',
+    'workers-robot-storage-8',
     -- why
     'ftl_Fed_Scout_tech',
     'ftl_Bomber_tech',
