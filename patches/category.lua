@@ -52,7 +52,7 @@ if mods['science-tab'] then
     local order_research_data = {
         'kr-blank-tech-card',
         'kr-biter-research-data',
-        'kr-space-research',
+        'kr-space-research-data',
         'kr-metallurgic-research-data',
         'kr-agricultural-research-data',
         'kr-electromagnetic-research-data',
@@ -66,6 +66,7 @@ if mods['science-tab'] then
         'xy-insulation-research-data',
         'xy-golden-research-data',
         'xy-spacecraft-research-data',
+        'kr-promethium-research-data',
     }
     local order_tech_card_1 = {
         'automation-science-pack',
