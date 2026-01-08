@@ -47,7 +47,7 @@ local function order_from_index(list, prototype)
     for index,item in pairs(list) do
         local v = data.raw[prototype][item]
         if v then 
-            v.order = index
+            v.order = tostring(index)
         end
     end
 end
