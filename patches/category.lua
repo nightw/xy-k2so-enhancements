@@ -10,15 +10,6 @@ end
 -- If installed, group all dedicated science manufactories into the science tab
 -- also labs
 if mods['science-tab'] and settings.startup['xy-move-lab-category'].value then
-
-    data:extend({
-        {
-        type = 'item-subgroup',
-        group = 'science',
-        name = 'xy-science-production',
-        order = 'aa',
-        },
-    })
     data.raw['item-subgroup']['lab'].group = 'science'
     data.raw['item-subgroup']['lab'].order = '00000'
 end
@@ -98,7 +89,7 @@ if mods['science-tab'] then
         'outer-rim-thermodynamic-science-pack',
         'cryogenic-science-pack',
         'kr-matter-tech-card',
-        'galvinization-science-pack',
+        'galvanization-science-pack',
         'outer-rim-cryochemical-science-pack',
         'outer-rim-insulation-science-pack',
         'golden-science-pack',
@@ -109,7 +100,7 @@ if mods['science-tab'] then
 
     apply_item_subgroup('xy-research-data', order_research_data, 'item')
     apply_item_subgroup('xy-tech-card-1', order_tech_card_1, 'tool')
-    apply_item_subgroup('xy-tech-card-2', order_tech_card_3, 'tool')
+    apply_item_subgroup('xy-tech-card-2', order_tech_card_2, 'tool')
     apply_item_subgroup('xy-tech-card-3', order_tech_card_3, 'tool')
     apply_item_subgroup('xy-special-science', {
         'kr-space-research-data-advanced',
