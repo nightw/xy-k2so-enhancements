@@ -54,5 +54,8 @@ end
 
 if settings.startup['xy-hydro-plant-runs-fuel-ref-recipes'].value and mods['maraxsis'] then
     table.insert(data.raw['assembling-machine']['maraxsis-hydro-plant'].crafting_categories, 'kr-fuel-refinery')
+end
 
+if settings.startup['xy-lab-recipe-changes'].value and mods['planet-muluna'] then
+    data.raw['lab']['kr-singularity-lab'].uses_quality_drain_modifier = true
 end

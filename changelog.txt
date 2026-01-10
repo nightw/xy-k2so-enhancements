@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 01-10-2026
+  Features:
+    - (Corrundum) Added sprited electrochemical tech card and electrochemical research data
+  Minor Features:
+    - (Muluna) Singularity lab now uses quality drain modifier when lab recipe changes setting is enabled, matching cryolab behavior
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 01-07-2026
   Features:

@@ -53,7 +53,7 @@ All settings in this category can be enabled or disabled in the mod settings!
 - (Default off) Add a connection from Moshine to Maraxsis which is 15000 km long
 ### Lab changes
 - Move all lab buildings to the science category if the Science group mod is installed without needing to meet the ten lab requirement
-- The singularity lab requires Muluna's cryolab instead of biolabs in its recipe. If Muluna isn't installed, quantum processors will be added to its recipe instead in order to require more Space Age materials (outside of Gleba)
+- The singularity lab requires Muluna's cryolab instead of biolabs in its recipe and inherits the cryolab's quality drain modifier. If Muluna isn't installed, quantum processors will be added to its recipe instead in order to require more Space Age materials (outside of Gleba)
 - If Paracelsin is installed, Muluna's cryolab requires galvanization tech cards (if enabled) and requires electric coils among other changes in its recipe
 - Biolabs rocket capacity increased from 1 to 5
 ***
