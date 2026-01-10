@@ -48,7 +48,9 @@ local function order_from_index(list, prototype, lead)
     for index,item in pairs(list) do
         local v = data.raw[prototype][item]
         if v then 
-            v.order = lead..tostring(index)
+            local extra = ''
+            if index < 10 then extra = '0' end
+            v.order = lead..extra..tostring(index)
         end
     end
 end
