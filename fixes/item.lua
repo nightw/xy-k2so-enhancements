@@ -1,3 +1,5 @@
+--- Adding Research datas with their recipe
+--- Eventually refactor this so that the recipe clones the ingredients of the original science pack recipe
 if mods['Paracelsin'] then
     data.extend({ 
         {
@@ -83,7 +85,47 @@ if mods['secretas'] then
         }
     })
 end
+if mods['corrundum'] then
+    data.extend({
+        {
+            type = 'item',
+            name = 'xy-electrochemical-research-data',
+            icon = '__xy-k2so-enhancements__/icons/electrochemical-research-data.png',
+            subgroup = 'science-pack',
+            order = 'ao09[elec',
+            stack_size = 200,
+            weight = 1 * kg,
+            default_import_location = 'corrundum',
 
+            localised_name = {'item-name.xy-electrochemical-research-data'},
+        },
+        {
+            type = 'recipe',
+            name = 'xy-electrochemical-research-data',
+            enabled = false,
+            energy_required = 15,
+            ingredients = {
+                {type = 'item', name = 'sulfur', amount = 2},
+                {type = 'item', name = 'platinum-plate', amount = 1},
+                {type = 'fluid', name = 'sulfuric-acid', amount = 100},
+            },
+            results = {
+                {type = 'item', name = 'xy-electrochemical-research-data', amount = 1},
+            },
+            category = 'catalytic-chemistry',
+            allow_productivity = true,
+            surface_conditions = {
+                {property = 'pressure', min = 6000, max = 6000},
+                {property = 'magnetic-field', min = 99, max = 99}
+            },
+
+            always_show_products = true,
+            show_amount_in_title = false,
+            localised_name = {'item-name.xy-electrochemical-research-data'}
+        }
+    })
+end
+--- Actual implentation of Tech Card + Research Data
 if settings.startup['xy-paracelsin-tech-card'].value and mods['Paracelsin'] then
     local gsp_recipe = data.raw['recipe']['galvanization-science-pack']
 
@@ -150,47 +192,6 @@ if settings.startup['xy-secretas-tech-card'].value and mods['secretas'] then
     table.insert(data.raw['technology']['golden-science-pack'].effects, {
         type = 'unlock-recipe',
         recipe = 'xy-golden-research-data',
-    })
-end
-
-if mods['corrundum'] then
-    data.extend({
-        {
-            type = 'item',
-            name = 'xy-electrochemical-research-data',
-            icon = '__xy-k2so-enhancements__/icons/electrochemical-research-data.png',
-            subgroup = 'science-pack',
-            order = 'ao09[elec',
-            stack_size = 200,
-            weight = 1 * kg,
-            default_import_location = 'corrundum',
-
-            localised_name = {'item-name.xy-electrochemical-research-data'},
-        },
-        {
-            type = 'recipe',
-            name = 'xy-electrochemical-research-data',
-            enabled = false,
-            energy_required = 15,
-            ingredients = {
-                {type = 'item', name = 'sulfur', amount = 2},
-                {type = 'item', name = 'platinum-plate', amount = 1},
-                {type = 'fluid', name = 'sulfuric-acid', amount = 100},
-            },
-            results = {
-                {type = 'item', name = 'xy-electrochemical-research-data', amount = 1},
-            },
-            category = 'catalytic-chemistry',
-            allow_productivity = true,
-            surface_conditions = {
-                {property = 'pressure', min = 6000, max = 6000},
-                {property = 'magnetic-field', min = 99, max = 99}
-            },
-
-            always_show_products = true,
-            show_amount_in_title = false,
-            localised_name = {'item-name.xy-electrochemical-research-data'}
-        }
     })
 end
 
