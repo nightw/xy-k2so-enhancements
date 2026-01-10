@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 01-10-2026
+  Bugfixes:
+    - Fix incorrect order of tech cards and research data
+    - Fix crash on load when Paracelsin is not installed & add more recipes to mechanical plant is enabled
+---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 01-07-2026
   Features:
