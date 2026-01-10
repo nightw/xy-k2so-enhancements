@@ -9,13 +9,13 @@
   "dependencies": [
     "base >= 2.0.72", 
     "Krastorio2-spaced-out >= 1.6.1",
-    "? Moshine",
     "? nulls-k2so-tweaks",
-    "? planet-muluna",
+    "? corrundum",
     "? maraxsis",
+    "? Moshine",
+    "? planet-muluna",
     "? Paracelsin",
     "? secretas",
-    "? corrundum",
     "? se-space-trains",
     "? science-tab",
     "? outer-rim"
