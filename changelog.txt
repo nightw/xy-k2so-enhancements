@@ -3,8 +3,14 @@ Version: 0.3.2
 Date: 01-10-2026
   Features:
     - (Corrundum) Added sprited electrochemical tech card and electrochemical research data
+      - Thanks to advantaje for creating the assets and implementation of electrochemical tech cards
+    - (Corrundum) Remove early game tech cards (red, green, blue, military) from its relevant researches
+      - This is always enabled, as I don't see a reason for why this would ever need to be disabled
   Minor Features:
-    - (Muluna) Singularity lab now uses quality drain modifier when lab recipe changes setting is enabled, matching cryolab behavior
+    - (Muluna) Singularity lab now uses quality drain modifier when lategame lab rebalance setting is enabled, matching cryolab behavior
+    - Science Pack Drain Multiplier on quality labs rebalanced to 97.5%, 95%, 92.5%, and 87.5% when lategame lab rebalance setting is enabled
+  Changes:
+    - Lategame lab rebalance setting recommendation changed from suggested to recommended
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.1
 Date: 01-10-2026
