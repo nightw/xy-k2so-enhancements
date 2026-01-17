@@ -1,9 +1,11 @@
-local function reformat(original_name, short_name, import_location, tech_name)
+local function reformat(original_name, short_name, import_location, tech_name, ignore_tech)
     -- The actual name of the science pack, the "relevant" part of the science pack name, import location
     -- Ex: 'cryogenic-science-pack', 'cryogenic', 'aquilo', nil
     -- The first arg exists cause some mods will start their items with "kr-" for example
     -- tech_name is for (bad) mods where the tech name to unlock the tech card is not the same as the actual item itself
+    -- ignore_tech is for when the unlock tech should not be altered; mainly if it unlocks other things
     local research_data_name = short_name..'-research-data'
+    
     -- Create research data item
     data.extend({ 
         {
@@ -22,6 +24,7 @@ local function reformat(original_name, short_name, import_location, tech_name)
 
     local r = data.raw.recipe[original_name]
     local research_data_recipe = table.deepcopy(r)
+
     -- Replace the science pack recipe with a tech card recipe from research data
     r.energy_required = 20
     r.category = 'kr-tech-cards'
@@ -36,6 +39,7 @@ local function reformat(original_name, short_name, import_location, tech_name)
     r.show_amount_in_title = false
     r.localised_name = {'item-name.xy-'..short_name..'-tech-card'}
     r.icon = '__xy-k2so-enhancements__/icons/'..short_name..'-tech-card.png'
+
     -- Clone the original science pack recipe and make it yield research datas
     research_data_recipe.name = 'xy-'..research_data_name
     data:extend({research_data_recipe})
@@ -46,25 +50,29 @@ local function reformat(original_name, short_name, import_location, tech_name)
     end
     research_data_recipe.main_product = research_data_recipe.name
     research_data_recipe.icon = '__xy-k2so-enhancements__/icons/'..research_data_name..'.png'
+
     -- Change research data icon and loc
     local i = data.raw.tool[original_name]
     i.icon = '__xy-k2so-enhancements__/icons/'..short_name..'-tech-card.png'
     i.localised_name = {'item-name.xy-'..short_name..'-tech-card'}
+
     -- Finally, change the technology to give research data recipe + change its icons and loc
     local tech_name = tech_name or original_name
     local t = data.raw.technology[tech_name]
     table.insert(t.effects, {
         type = 'unlock-recipe', recipe = research_data_recipe.name
     })
-    t.icons = nil
-    t.icon = '__xy-k2so-enhancements__/icons/'..short_name..'-tech-card-research.png'
-    t.localised_name = {'item-name.xy-'..short_name..'-tech-card'}
+    if not ignore_tech then
+        t.icons = nil
+        t.icon = '__xy-k2so-enhancements__/icons/'..short_name..'-tech-card-research.png'
+        t.localised_name = {'item-name.xy-'..short_name..'-tech-card'}
+    end
 end
 
 ---
 
 for _,card_data in pairs(require('fixes.tech_cards_list')) do
     if mods[card_data.mod] and card_data.setting then
-        reformat(card_data['original_name'], card_data['short_name'], card_data['import_location'], card_data['tech_name'])
+        reformat(card_data['original_name'], card_data['short_name'], card_data['import_location'], card_data['tech_name'], card_data['ignore_tech'])
     end
 end

@@ -35,4 +35,12 @@ return {
         ['import_location'] = nil,
         ['tech_name'] = 'slp-sunpack'
     },
+    {
+        ['mod'] = 'rubia',
+        ['setting'] = true,
+        ['original_name'] = 'biorecycling-science-pack',
+        ['short_name'] = 'biorecycling',
+        ['import_location'] = 'rubia',
+        ['ignore_tech'] = true
+    },
 }
