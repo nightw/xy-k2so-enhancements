@@ -48,7 +48,7 @@ if mods['science-tab'] then
             order = 'd3',
         },
     })
-
+    -- These arrays are used to order and regroup all the research datas. They are ordered by index; so just the order they are written in
     local order_research_data = {
         'kr-blank-tech-card',
         'kr-biter-research-data',
@@ -56,6 +56,7 @@ if mods['science-tab'] then
         'kr-metallurgic-research-data',
         'kr-agricultural-research-data',
         'kr-electromagnetic-research-data',
+        'xy-battlefield-research-data',
         'kr-cerysian-research-data',
         'xy-electrochemical-research-data',
         'hydraulic-research-data',
@@ -83,6 +84,7 @@ if mods['science-tab'] then
         'metallurgic-science-pack',
         'agricultural-science-pack',
         'electromagnetic-science-pack',
+        'battlefield-science-pack',
         'cerysian-science-pack',
         'electrochemical-science-pack',
         'interstellar-science-pack',
