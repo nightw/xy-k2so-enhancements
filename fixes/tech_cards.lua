@@ -44,6 +44,7 @@ local function reformat(original_name, short_name, import_location)
         end
     end
     research_data_recipe.main_product = research_data_recipe.name
+    research_data_recipe.icon = '__xy-k2so-enhancements__/icons/'..research_data_name..'.png'
     -- Change research data icon and loc
     local i = data.raw.tool[original_name]
     i.icon = '__xy-k2so-enhancements__/icons/'..short_name..'-tech-card.png'
