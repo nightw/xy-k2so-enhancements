@@ -41,6 +41,7 @@ return {
         ['original_name'] = 'biorecycling-science-pack',
         ['short_name'] = 'biorecycling',
         ['import_location'] = 'rubia',
+        ['tech_name'] = 'craptonite-processing',
         ['ignore_tech'] = true
     },
 }
