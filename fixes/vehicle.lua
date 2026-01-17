@@ -32,6 +32,6 @@ if mods['rubia'] then
     data.raw['cargo-wagon']['rubia-armored-cargo-wagon'].weight = 5000
     data.raw['cargo-wagon']['rubia-armored-cargo-wagon'].equipment_grid = 'kr-wagons-grid'
 
-    data.raw['cargo-wagon']['rubia-armored-fluid-wagon'].weight = 5000
-    data.raw['cargo-wagon']['rubia-armored-fluid-wagon'].equipment_grid = 'kr-wagons-grid'
+    data.raw['fluid-wagon']['rubia-armored-fluid-wagon'].weight = 5000
+    data.raw['fluid-wagon']['rubia-armored-fluid-wagon'].equipment_grid = 'kr-wagons-grid'
 end
