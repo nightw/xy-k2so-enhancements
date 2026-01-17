@@ -28,6 +28,7 @@ end
 if mods['rubia'] then
     data.raw['locomotive']['rubia-armored-locomotive'].weight = 20000
     data.raw['locomotive']['rubia-armored-locomotive'].equipment_grid = 'kr-locomotive-grid'
+    table.insert(data.raw['locomotive']['rubia-armored-locomotive'].energy_source.fuel_categories, 'kr-vehicle-fuel')
 
     data.raw['cargo-wagon']['rubia-armored-cargo-wagon'].weight = 5000
     data.raw['cargo-wagon']['rubia-armored-cargo-wagon'].equipment_grid = 'kr-wagons-grid'
@@ -35,3 +36,4 @@ if mods['rubia'] then
     data.raw['fluid-wagon']['rubia-armored-fluid-wagon'].weight = 5000
     data.raw['fluid-wagon']['rubia-armored-fluid-wagon'].equipment_grid = 'kr-wagons-grid'
 end
+
