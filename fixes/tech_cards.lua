@@ -44,7 +44,10 @@ local function reformat(original_name, short_name, import_location)
         end
     end
     research_data_recipe.main_product = research_data_recipe.name
-
+    -- Change research data icon and loc
+    local i = data.raw.tool[original_name]
+    i.icon = '__xy-k2so-enhancements__/icons/'..short_name..'-tech-card.png'
+    i.localised_name = {'item-name.xy-'..short_name..'-tech-card'}
     -- Finally, change the technology to give research data recipe + change its icons and loc
     local t = data.raw.technology[original_name]
     table.insert(t.effects, {
@@ -55,19 +58,9 @@ local function reformat(original_name, short_name, import_location)
     r.localised_name = {'item-name.xy-'..short_name..'-tech-card'}
 end
 
--- Add a table here to apply tech cards
--- Format should be obvious, set setting = true to just ignore it
-local todo = {
-    {
-        ['mod'] = 'Paracelsin',
-        ['setting'] = settings.startup[xy-paracelsin-tech-card].value,
-        ['original_name'] = 'galvanization-science-pack',
-        ['short_name'] = 'galvanization',
-        ['import_location'] = 'paracelsin',
-    },
-}
+---
 
-for _,card_data in pairs(todo) do
+for _,card_data in pairs(require('fixes.tech_cards_list')) do
     if mods[card_data.mod] and card_data.setting then
         reformat(card_data['original_name'], card_data['short_name'], card_data['import_location'])
     end
