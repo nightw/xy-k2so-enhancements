@@ -55,19 +55,9 @@ local function reformat(original_name, short_name, import_location)
     r.localised_name = {'item-name.xy-'..short_name..'-tech-card'}
 end
 
--- Add a table here to apply tech cards
--- Format should be obvious, set setting = true to just ignore it
-local todo = {
-    {
-        ['mod'] = 'Paracelsin',
-        ['setting'] = settings.startup[xy-paracelsin-tech-card].value,
-        ['original_name'] = 'galvanization-science-pack',
-        ['short_name'] = 'galvanization',
-        ['import_location'] = 'paracelsin',
-    },
-}
+---
 
-for _,card_data in pairs(todo) do
+for _,card_data in pairs(require('fixes.tech_cards_list')) do
     if mods[card_data.mod] and card_data.setting then
         reformat(card_data['original_name'], card_data['short_name'], card_data['import_location'])
     end
