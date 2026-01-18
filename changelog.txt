@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.1
+Date: 01-17-2026
+  Features:
+    - (Rubia) Add biorecylcing tech card replacement
+      - The other tech cardsaren't done yet as I don't have any good ideas on what to actually sprite for them
+    - (Rubia) Armored trains now support K2 train equipment, vehicle fuel, and are re-weighted
+    - (Advanced Centrifuge) Added a default on setting to integrate the mod better than it does natively
+      - Machine stats rebalanced to be more SA than K2 like; now has +50% productivity but half the speed
+      - Matter tech card replaced with electromagnetic tech cards in its corresponding technology
+      - Recipe replaced to be more difficult and require supercapacitors
+---------------------------------------------------------------------------------------------------
 Version: 0.5.0
 Date: 01-16-2026
   Features:
