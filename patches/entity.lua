@@ -75,6 +75,7 @@ if settings.startup['xy-advanced-centrifuge-rebalance'].value and mods['advanced
         {type = 'item', name = 'electric-engine-unit', amount = 40},
         {type = 'item', name = 'refined-concrete', amount = 200},
         {type = 'item', name = 'kr-energy-control-unit', amount = 50},
+        {type = 'item', name = 'supercapacitor', amount = 20},
         {type = 'item', name = 'centrifuge', amount = 4},
     }
 end
