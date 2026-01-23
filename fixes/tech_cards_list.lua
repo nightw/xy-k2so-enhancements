@@ -44,4 +44,52 @@ return {
         ['tech_name'] = 'craptonite-processing',
         ['ignore_tech'] = true
     },
+    {
+        ['mod'] = 'particle-physics',
+        ['setting'] = true,
+        ['original_name'] = 'particle-physics-pack',
+        ['short_name'] = 'particle-physics',
+        ['import_location'] = 'aquilo',
+        ['ignore_tech'] = true
+    },
+    {
+        ['mod'] = 'workshop-science',
+        ['setting'] = true,
+        ['original_name'] = 'workshop-science-pack',
+        ['short_name'] = 'workshop',
+        ['import_location'] = 'nauvis',
+        ['basic_card'] = true
+    },
+    {
+        ['mod'] = 'atan-nuclear-science',
+        ['setting'] = true,
+        ['original_name'] = 'nuclear-science-pack',
+        ['short_name'] = 'nuclear',
+        ['import_location'] = 'nauvis'
+    },
+    {
+        ['mod'] = 'pelagos',
+        ['setting'] = true,
+        ['original_name'] = 'pelagos-science-pack',
+        ['short_name'] = 'decomposition',
+        ['import_location'] = 'pelagos',
+        ['ignore_tech'] = true
+    },
+    {
+        ['mod'] = 'planetaris-arig',
+        ['setting'] = true,
+        ['original_name'] = 'planetaris-compression-science-pack',
+        ['short_name'] = 'compression',
+        ['tech_name'] = 'planetaris-compression-science',
+        ['import_location'] = 'arig'
+    },
+    {
+        ['mod'] = 'skewer_planet_vesta',
+        ['setting'] = true,
+        ['original_name'] = 'gas-manipulation-science-pack',
+        ['short_name'] = 'gas-manipulation',
+        ['tech_name'] = 's1_gas_manipulation_science_pack',
+        ['import_location'] = 'vesta',
+        ['ignore_tech'] = true
+    }
 }

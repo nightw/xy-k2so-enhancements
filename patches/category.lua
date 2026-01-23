@@ -52,10 +52,13 @@ if mods['science-tab'] then
     local order_research_data = {
         'kr-blank-tech-card',
         'kr-biter-research-data',
+        'xy-nuclear-research-data',
         'kr-space-research-data',
         'kr-metallurgic-research-data',
         'kr-agricultural-research-data',
         'kr-electromagnetic-research-data',
+        'xy-decomposition-research-data',
+        'xy-compression-research-data',
         'xy-battlefield-research-data',
         'xy-biorecycling-research-data',
         'kr-cerysian-research-data',
@@ -67,18 +70,22 @@ if mods['science-tab'] then
         'kr-matter-research-data',
         'xy-galvanization-research-data',
         'xy-cryochemical-research-data',
+        'xy-particle-physics-research-data',
         'xy-insulation-research-data',
         'xy-golden-research-data',
         'xy-spacecraft-research-data',
+        'xy-gas-manipulation-research-data',
         'kr-promethium-research-data',
     }
     local order_tech_card_1 = { -- "Basic" tech cards; pre-space
         'automation-science-pack',
         'logistic-science-pack',
+        'workshop-science-pack',
         'military-science-pack',
         'chemical-science-pack',
         'production-science-pack',
         'utility-science-pack',
+        'nuclear-science-pack'
     }
     local order_tech_card_2 = { -- Muluna until planets w/ big asteroids
         'space-science-pack',
@@ -91,6 +98,8 @@ if mods['science-tab'] then
         'cerysian-science-pack',
         'electrochemical-science-pack',
         'slp-sun-science-pack',
+        'pelagos-science-pack',
+        'planetaris-compression-science-pack',
         'interstellar-science-pack',
     }
     local order_tech_card_3 = { -- Big/huge asteroids
@@ -104,6 +113,8 @@ if mods['science-tab'] then
         'kr-singularity-tech-card',
         'golden-science-pack',
         'outer-rim-spacecraft-science-pack',
+        'particle-physics-pack',
+        'gas-manipulation-science-pack',
 
         'promethium-science-pack', -- Always last (unless something adds post-promethium)
     }

@@ -103,6 +103,21 @@ local strip_basic_tech_cards = {
 for _,tech in pairs(strip_basic_tech_cards) do
     util.tech_remove_cards(tech, {'logistic-science-pack','military-science-pack','automation-science-pack','chemical-science-pack'})
 end
+--- Wipe out workshop tech card in mid-late technologies
+if mods['workshop-science'] then
+    for _,tech in pairs(t) do
+        if not tech.unit then
+            goto continueWorkshop
+        end
+        for _, val in pairs(tech.unit.ingredients) do
+            if val[1] == 'automation-science-pack' then
+                goto continueWorkshop
+            end
+            remove_cards(tech.name, {'workshop-science-pack'})
+        end
+        ::continueWorkshop::
+    end
+end
 ----- MLE Tech Scaling -----
 if settings.startup['xy-tech-inflation'].value then
     -- increase the cost of all mid-late-endgame techs, starting after the first three vanilla planets
