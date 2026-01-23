@@ -50,7 +50,6 @@ return { ---- Please see fixes.tech_cards for how to use this file ----
         ['original_name'] = 'particle-physics-pack',
         ['short_name'] = 'particle-physics',
         ['import_location'] = 'aquilo',
-        ['ignore_tech'] = true
     },
     {
         ['mod'] = 'workshop-science',
@@ -73,7 +72,6 @@ return { ---- Please see fixes.tech_cards for how to use this file ----
         ['original_name'] = 'pelagos-science-pack',
         ['short_name'] = 'decomposition',
         ['import_location'] = 'pelagos',
-        ['ignore_tech'] = true
     },
     {
         ['mod'] = 'planetaris-arig',
@@ -90,6 +88,5 @@ return { ---- Please see fixes.tech_cards for how to use this file ----
         ['short_name'] = 'gas-manipulation',
         ['tech_name'] = 's1_gas_manipulation_science_pack',
         ['import_location'] = 'vesta',
-        ['ignore_tech'] = true
     }
 }
