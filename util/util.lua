@@ -56,4 +56,16 @@ local function order_from_index(list, prototype, lead)
 end
 utils.order_from_index = order_from_index
 
+local function replace_ingredient_name(recipe, old, new) -- Just for item names, good for swapping equiv. items
+    local r = data.raw.recipe[recipe]
+    if r then
+        for _,v in pairs(r.ingredients) do
+            if v.name == old then
+                v.name = new
+            end
+        end
+    end
+end
+utils.replace_ingred_name = replace_ingredient_name
+
 return utils

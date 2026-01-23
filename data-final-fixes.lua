@@ -14,3 +14,4 @@ require('patches.quality')
 -- updates; overrides over other mods
 
 require('updates.outer-rim-final')
+require('updates.planetaris')
