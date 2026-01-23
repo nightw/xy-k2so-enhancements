@@ -1,4 +1,4 @@
-return {
+return { ---- Please see fixes.tech_cards for how to use this file ----
     {
         ['mod'] = 'Paracelsin',
         ['setting'] = settings.startup['xy-paracelsin-tech-card'].value,

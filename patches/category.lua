@@ -118,16 +118,18 @@ if mods['science-tab'] then
 
         'promethium-science-pack', -- Always last (unless something adds post-promethium)
     }
+    local order_special_science = {
+        'kr-space-research-data-advanced',
+        'cerys-space-science-pack-from-methane-ice',
+        'space-science-pack-muluna',
+        'rubia-biofusion-promethium-science-pack',
+    }
 
     apply_item_subgroup('xy-research-data', order_research_data, 'item')
     apply_item_subgroup('xy-tech-card-1', order_tech_card_1, 'tool')
     apply_item_subgroup('xy-tech-card-2', order_tech_card_2, 'tool')
     apply_item_subgroup('xy-tech-card-3', order_tech_card_3, 'tool')
-    apply_item_subgroup('xy-special-science', {
-        'kr-space-research-data-advanced',
-        'cerys-space-science-pack-from-methane-ice',
-        'space-science-pack-muluna',
-    }, 'recipe')
+    apply_item_subgroup('xy-special-science', order_special_science, 'recipe')
     util.order_from_index(order_research_data, 'item')
     util.order_from_index(order_tech_card_1, 'tool')
     util.order_from_index(order_tech_card_2, 'tool')

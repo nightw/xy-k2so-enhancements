@@ -3,7 +3,7 @@ local function reformat(original_name, short_name, import_location, tech_name, i
     -- Ex: 'cryogenic-science-pack', 'cryogenic', 'aquilo', nil
     -- The first arg exists cause some mods will start their items with "kr-" for example
     -- tech_name is for (bad) mods where the tech name to unlock the tech card is not the same as the actual item itself
-    -- ignore_tech is for when the unlock tech should not be altered; mainly if it unlocks other things
+    -- ignore_tech is for when the unlock tech should not be altered (by changing its icon/name); mainly if it unlocks other things
     -- basic_card is for when a card is an early-game card that does not need research data
     local research_data_name = short_name..'-research-data'
     
@@ -94,4 +94,10 @@ for _,card_data in pairs(require('fixes.tech_cards_list')) do
     if mods[card_data.mod] and card_data.setting then
         reformat(card_data['original_name'], card_data['short_name'], card_data['import_location'], card_data['tech_name'], card_data['ignore_tech'], card_data['basic_card'])
     end
+end
+
+--- Specific card patches
+if mods['pelagos'] then
+    data.raw.item['xy-decomposition-research-data'].spoil_ticks = 81000
+    data.raw.tool['pelagos-science-pack'].spoil_result = 'kr-blank-tech-card'
 end
