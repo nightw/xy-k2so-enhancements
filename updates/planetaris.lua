@@ -24,8 +24,6 @@ if mods['planetaris-arig'] and true then
     }
     -- Hyper splitter rep
     util.replace_ingred_name('kr-superior-splitter', 'turbo-splitter', 'planetaris-hyper-splitter')
-    -- 
-
     --- Create hyper loader
     local belt_anim = data.raw["transport-belt"]['planetaris-hyper-transport-belt'].belt_animation_set
     data:extend({
@@ -46,7 +44,7 @@ if mods['planetaris-arig'] and true then
         {
             type = 'item',
             name = 'xy-hyper-loader',
-            icon = '',
+            icon = '__xy-k2so-enhancements__/icons/hyper-loader.png',
             subgroup = 'belt',
             order = 'd[loader]-a5[xy-hyper-loader]',
             place_result = 'xy-hyper-loader',
@@ -56,7 +54,7 @@ if mods['planetaris-arig'] and true then
         {
             type = 'loader-1x1',
             name = 'xy-hyper-loader',
-            icon = '',
+            icon = '__xy-k2so-enhancements__/icons/hyper-loader.png',
             flags = {'placeable-neutral', 'player-creation'},
             minable = {mining_time = .25, result = 'xy-hyper-loader'},
             fast_replaceable_group = 'transport_belt',
