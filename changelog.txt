@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.6.0
+Date: 01-23-2026
+  Features:
+    - Added tech card replacements for the following mods:
+      - Particle Physics, Workshop Science, Nuclear Science, Pelagos, Arig, Vesta
+      - Thank you to EyeBallin for supporting these mods!
+    - (Planetaris: Arig) Added hyper belt integration which adds a hyper loader and makes superior belts require hyper belts
+  Minor Features:
+    - Added Pelagos inserters to Paracelsin's mechanical plant
+  Changes:
+    - Internally changed how adding items to Paracelsin's mechanical plant is handled
+---------------------------------------------------------------------------------------------------
 Version: 0.5.1
 Date: 01-17-2026
   Features:

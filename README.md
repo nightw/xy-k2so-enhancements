@@ -11,7 +11,7 @@ The mods settings are detailed more in game, including effects on existing saves
 ## Built-in
 ### Tech Cards
 - The following mods have their science packs replaced with K2 appropriate tech cards. All tech cards are made from research data the same way other space age tech cards are handled:
-  - Castra, Corrundum, Paracelsin, Secretas, Outer Rim, SLP Dyson Sphere Reworked, Rubia (partial)
+  - Castra, Corrundum, Paracelsin, Secretas, Outer Rim, SLP Dyson Sphere Reworked, Rubia (partial), Particle Physics, Workshop Science, Nuclear Science, Pelagos, Arig, Vesta
 ### Vehicles & Equipment
 - Vehicles and trains from external mods are now properly supported by K2's equipment system
   - Supported: Muluna's rocket buggy, SE Space Trains, Maraxsis' submarines, Rubia's Armored Trains
@@ -30,6 +30,8 @@ All settings in this category can be enabled or disabled in the mod settings!
 - Reorganizes tech cards and research data from K2 and other mods into a more digestable format if [Science group](https://mods.factorio.com/mod/science-tab) is installed
 - (Default off) Spidertron recipe requires raw fish again
 - (Default off) K2's Advanced Tank locked behind science from Vulcanus, Gleba, & Fulgora to encourage usage of combat spidertrons
+### Planetaris: Arig
+- Hyper Belts are better integrated into K2 by making them used in Superior Belts, adding a hyper loader, and changing their recipes to be more K2-esque
 ### Maraxsis
 - Hydro plant can run fuel refinery recipes; this may put the cryo plant out of a job
 - (Default off) Add a connection from Moshine to Maraxsis which is 15000 km long
@@ -55,7 +57,7 @@ All settings in this category can be enabled or disabled in the mod settings!
 # Contributors
 - **xyrc** - Main developer
 - **advantaje** - Corrundum support & assets
-
+- **EyeBallin** - Support and assets for Particle Physics, Workshop Science, Nuclear Science, Pelagos, Arig, & Vesta
 This mod is a project to unify K2SO with other mods to make the most cohesive gameplay possible. Please check out the mod's Github if you are interested in contributing to the mod.
 ***
 Credits to Krastorio 2 as research data and tech card sprites were edited to create the assets in this mod.
