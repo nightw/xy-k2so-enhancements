@@ -88,7 +88,7 @@ if mods['planetaris-arig'] and true then
     data.raw.item['planetaris-hyper-transport-belt'].order = 'a[transport-belt]-e[hyper-transport-belt]'
     data.raw.item['kr-superior-underground-belt'].order = 'b[underground-belt]-f[superior-underground-belt]'
     data.raw.item['planetaris-hyper-underground-belt'].order = 'b[underground-belt]-e[hyper-underground-belt]'
-    data.raw.item['kr-superior-splitter'].order = 'z-c[splitter]-f[superior-splitter]'
-    data.raw.item['planetaris-hyper-splitter'].order = 'z-c[splitter]-e[hyper-splitter]'
-    data.raw.item['kr-superior-loader'].order = 'z-d[loader]-a6[kr-superior-loader]'
+    data.raw.item['kr-superior-splitter'].order = 'c[splitter]-f[superior-splitter]'
+    data.raw.item['planetaris-hyper-splitter'].order = 'c[splitter]-e[hyper-splitter]'
+    data.raw.item['kr-superior-loader'].order = 'd[loader]-a6[kr-superior-loader]'
 end
