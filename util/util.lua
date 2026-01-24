@@ -7,8 +7,6 @@ local function add_preqs(tech, preqs)
         for _,v in pairs(preqs) do
             table.insert(t[tech].prerequisites, v)
         end
-    else
-        log(tech..' - Tech does not exist!')
     end
 end
 utils.tech_add_preqs = add_preqs
@@ -22,8 +20,6 @@ local function remove_preqs(tech, preqs_to_remove) -- Should be used before add_
                 end
             end
         end
-    else
-        log(tech..' - Tech does not exist!')
     end
 end
 utils.tech_remove_preqs = remove_preqs
@@ -37,8 +33,6 @@ local function remove_cards(tech, cards_to_remove) -- Should be used before add_
                 end
             end
         end
-    else
-        log(tech..' - Tech does not exist!')
     end
 end
 utils.tech_remove_cards = remove_cards
